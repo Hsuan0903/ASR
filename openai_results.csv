@@ -1,0 +1,63 @@
+Filename,Ground Truth,Prediction,Postprocessed,Inference Time,WER,CER,RTF
+05ba63b9-b01a-41cd-b8e4-8d98f5baf332.wav,gamma seven engaged, Karma 7 Engage,karma seven engage,1.8772,66.67%,15.79%,0.7586
+0f4f029b-5392-460c-b85f-5380839d2e7f.wav,beta one in nine thousand, 被他玩耳奈招手,被他玩耳奈招手,0.8019,100.00%,100.00%,0.2489
+1a055188-b1e1-4ddc-bd9e-c2c1bcee88f6.wav,beta one off two zero zero," Beta 1 of 2, 0, 0",beta one of two zero zero,0.9359,16.67%,3.85%,0.2659
+1a81d3f6-3216-4a35-af0b-d0f0fa846b3e.wav,gamma seven clear for takeoff, Gamma 7 clear for takeoff.,gamma seven clear for takeoff,0.9144,0.00%,0.00%,0.4122
+1d7186d6-8a4c-4f61-97e3-7baac1d5e847.wav,mission complete, Mission complete.,mission complete,0.7437,0.00%,0.00%,0.4469
+2da33b93-bac3-4095-8ac4-524fff253a47.wav,gamma seven engaged, Kama 7 in 8,kama seven in eight,0.6025,100.00%,42.11%,0.2796
+32e81d2b-ff33-4b7d-abb1-da468872a16d.wav,bravo nine heading, Bravo Nai Handy,bravo nai handy,3.6223,66.67%,44.44%,0.9815
+33d9721a-9c6b-4a19-ad62-2aff83309b39.wav,delta three off, Lose her to chim trousers,lose her to chim trousers,4.3186,166.67%,133.33%,1.9098
+3cf637b5-62c5-4628-8575-ce83cbe8a6b2.wav,holding hands, All the enhance.,all the enhance,0.7738,150.00%,76.92%,0.6364
+512f290c-f06d-487b-bac9-178246cba1d0.wav,gama one holding hands, 家媽玩好靈犬。,家媽玩好靈犬。,0.8875,100.00%,100.00%,0.2909
+57dcd0c7-bdc8-4b1a-b339-927d4d28c4fe.wav,mission complete, Mission complete.,mission complete,0.5798,0.00%,0.00%,0.3355
+5ec499a9-4b40-4e88-b383-540fcb4b3905.wav,mission complete, Mission Complete,mission complete,0.6490,0.00%,0.00%,0.2142
+628608c6-4d9e-4779-93bb-7e1f36cdeb4f.wav,beta zero two zero zero," Beta zero, two zero zero.",beta zero two zero zero,0.7203,0.00%,0.00%,0.2084
+6423822e-35f3-4bfd-ac94-b84cbde0f67e.wav,delta three off, Delta 3 off.,delta three off,0.5827,0.00%,0.00%,0.2439
+6a6708e4-b8da-4554-98a8-61e342127b7a.wav,alpha one scramble, Alpha 1's,alpha one s,4.0067,33.33%,38.89%,1.4673
+7bc5a8a0-036c-4def-9de9-0709fff7f795.wav,holding hands, Holding hands.,holding hands,0.7007,0.00%,0.00%,0.4105
+81da6eae-b3e6-4161-9e80-8b1b450ee2c0.wav,holding hands, Holding Hands,holding hands,0.6740,0.00%,0.00%,0.3009
+8202755b-cc89-4801-9cb4-f3b6b2b5f9d3.wav,beta zero two zero zero, Beta zero two zero zero,beta zero two zero zero,0.9421,0.00%,0.00%,0.2795
+85a5da38-79be-4ab7-8391-86a19bce899b.wav,delta five off three thousand, Data file of 3000,data file of three thousand,0.8847,60.00%,13.79%,0.2279
+860a72ca-46df-4fa0-8085-6b0552765cd7.wav,delta five off three thousand, Delta 5 of 3000,delta five of three thousand,0.8813,20.00%,3.45%,0.2474
+88d5f6c9-8689-4354-8fd4-d333ab154991.wav,alpha eight cleared to land runway two one, Alpha 8 clear to land runway 21,alpha eight clear to land runway two one,0.9523,12.50%,4.76%,0.2413
+8922cfbe-7f64-4847-9552-a2708c157c9e.wav,delta five off three thousand, Delta 5 of 3000,delta five of three thousand,0.8700,20.00%,3.45%,0.2502
+8cf93a28-3a24-461c-ad11-fba4f07aea0f.wav,alfa four angle one eight zero, Alpha 4 and Go 1 and 0.,alpha four and go one and zero,0.7346,66.67%,36.67%,0.3047
+8f20d6c4-2a50-4232-8201-2ce0a5763cd1.wav,beta two engaged, Beta to engage.,beta to engage,0.8150,66.67%,12.50%,0.2961
+934ce005-732c-4e18-b04c-fb34a96688b0.wav,auo property, Hey you all property,hey you all property,0.7733,150.00%,83.33%,0.3356
+977ce7e4-10b6-44d7-b8b5-c5b1c0ed7295.wav,cleared for takeoff, Cleared for takeoff.,cleared for takeoff,0.9336,0.00%,0.00%,0.2860
+9b1b39e9-cd09-4169-9083-30833f5409ac.wav,beta three holding hands, Beta 3 holding hands.,beta three holding hands,0.8448,0.00%,0.00%,0.4552
+9b5c1e31-ebeb-42d2-aa5e-4886ad9a4540.wav,beta two engaged, but that'll be good,but thatll be good,3.8488,133.33%,75.00%,2.0737
+9d0fc2d3-57d8-48ff-9ff8-6059859d2e75.wav,alpha four in two seven zero, Alpha 4 in 270.,alpha four in two seven zero,0.5989,0.00%,0.00%,0.2301
+9e244a94-6b20-43ab-bf46-9c72bd6afc2a.wav,cleared for takeoff," Kareo 4, take off.",kareo four take off,0.6972,133.33%,31.58%,0.2495
+9efbf031-80e1-4b4c-9818-f087b8e5bb8f.wav,delta three off, Data free of.,data free of,0.5663,100.00%,33.33%,0.2504
+a4561da5-7097-47ec-8500-615ad425478f.wav,beta one in nine thousand, Beta 1 in 9000s,beta one in nine thousand s,0.6293,20.00%,8.00%,0.2543
+a5b8c7d1-8db0-4971-b24b-38102170817b.wav,gamma two go cover three six zero, Gamma 2 Gold Cover 360,gamma two gold cover three six zero,0.7260,14.29%,6.06%,0.1860
+a5c4bf41-bb19-4a99-bb75-c701ef096009.wav,bravo seven mission complete, Bubble 7 mission complete,bubble seven mission complete,0.7976,25.00%,17.86%,0.2790
+ad5aaeb4-8e36-4544-90da-0925eccf12a3.wav,mission complete, Mission Complete,mission complete,0.5629,0.00%,0.00%,0.2587
+b5e1fd8a-4b8a-4844-b1e7-a0dee235294a.wav,alfa four angle one eight zero, Alpha 4 angle 180,alpha four angle one eight zero,0.5598,16.67%,6.67%,0.1156
+bdab1b76-81ee-461a-b82a-5af8a6ee520a.wav,delta three off, Delta 3-0,delta three zero,1.1456,33.33%,26.67%,0.5317
+bed24e0b-2b05-4ab6-b741-38398d38f0a4.wav,delta one off, Delta 1 off.,delta one off,0.5720,0.00%,0.00%,0.2062
+c729e3e1-4372-4f25-87e2-a5c82fd2d148.wav,delta one scramble, Delta 1 is Grumble,delta one is grumble,0.5968,66.67%,22.22%,0.3497
+c9a5a879-403c-4a42-ba84-b6367adc88c2.wav,mission complete, Mission complete.,mission complete,0.5312,0.00%,0.00%,0.2964
+cc03b073-87aa-4697-9e42-2a12c6c62c11.wav,alpha two go cover one o one, Afa to go cover 101,afa to go cover one zero one,0.6364,42.86%,25.00%,0.1320
+ce962a89-296a-4ab1-aaba-e66203a886d4.wav,gamma nine engaged, Gamma 9 Engage,gamma nine engage,1.1774,33.33%,5.56%,0.4088
+d0458c64-6333-471a-b38c-b6c03d65083f.wav,delta one scramble, Delta One Scramble,delta one scramble,0.5641,0.00%,0.00%,0.1502
+d7850d3c-4cb5-4173-8283-929eabc64577.wav,delta three off, Delta 3 off.,delta three off,0.5729,0.00%,0.00%,0.2004
+d7ec8e61-6556-4002-836c-be657dddb214.wav,holding hands, Holding hands,holding hands,0.5122,0.00%,0.00%,0.1921
+d98c9496-ebd2-4247-8a83-000339736b18.wav,bravo two go cover two zero zero," Bravo 2, go cover 2-0-0.",bravo two go cover two zero zero,1.0866,0.00%,0.00%,0.3664
+da7720cf-2786-4df8-8229-aec7b704a1a3.wav,gamma five heading eight thousand, Gamma 5 heading 8000,gamma five heading eight thousand,0.9256,0.00%,0.00%,0.2873
+dbb035f2-a6bf-44ff-b80e-52667d9e8a6d.wav,holding hands, Holding hands.,holding hands,0.8059,0.00%,0.00%,0.3632
+ddf50ce3-f340-45f2-8a18-24a992505a52.wav,delta three off, Delta 3 off,delta three off,0.8028,0.00%,0.00%,0.2987
+de3a2bd9-ab88-4983-9606-b0f93ef060f3.wav,gamma seven in edge, gamma 7,gamma seven,3.6749,50.00%,42.11%,1.5244
+e18a700f-b5aa-498d-b012-6ab4ac0aea6a.wav,delta five off three thousand, Data file of 3000,data file of three thousand,0.7450,60.00%,13.79%,0.2183
+e1ed0643-ccfb-4803-9fcd-d36f883f426d.wav,beta two engaged, Beta 2 Engage,beta two engage,0.6033,33.33%,6.25%,0.1911
+e5a67927-c1d5-46a0-a99d-b34b0d360163.wav,mission complete, Mission complete!,mission complete,0.5437,0.00%,0.00%,0.2628
+e9ea0ee7-a5b8-48fe-a230-a264e2fefc9c.wav,mission complete, Mission Conflict,mission conflict,1.1337,50.00%,31.25%,0.5014
+ee19baaa-6d2c-4f9b-be4d-390d1b2e22bd.wav,delta three off, Delta 3 off.,delta three off,0.5965,0.00%,0.00%,0.2542
+f09e0d3f-3de0-4a0d-950c-9a5e0d0c4c78.wav,alpha one scramble, Alpha One Scrambler,alpha one scrambler,0.6203,33.33%,5.56%,0.2254
+f2e5e8a4-54c1-461c-a724-d3636886394f.wav,delta nine heading, Delta Knight heading,delta knight heading,0.5441,33.33%,22.22%,0.2429
+f4ec48e8-5a34-4eef-a5b6-75cab3899277.wav,alpha two go cover zero one zero, Alpha 2 go cover 010.,alpha two go cover zero one zero,0.6790,0.00%,0.00%,0.2165
+f81f5414-b591-455c-bc94-b68450f71acb.wav,beta three off, Data free of.,data free of,0.5766,100.00%,35.71%,0.3296
+f9e94f93-e6d0-4e09-8cf3-79f20219e95d.wav,alpha six angle one two zero, Alpha 6 and Go 120.,alpha six and go one two zero,0.6427,33.33%,14.29%,0.2335
+fc70b395-2fe3-41d7-8dc2-ac3bd7d43716.wav,beta one off two zero zero, Beta 1 of 2 0 0,beta one of two zero zero,0.9400,16.67%,3.85%,0.4237
+Averages,,,,1.0203,36.47%,18.79%,0.4039

@@ -1,0 +1,63 @@
+Filename,Ground Truth,Prediction,Postprocessed,Inference Time,WER,CER,RTF
+05ba63b9-b01a-41cd-b8e4-8d98f5baf332,gamma seven engaged,가마세븐 엔게이츠,가마세븐 엔게이츠,2.5360,100.00%,94.74%,1.0248
+0f4f029b-5392-460c-b85f-5380839d2e7f,beta one in nine thousand,被台灣迎來早上,被台灣迎來早上,0.8223,100.00%,100.00%,0.2553
+1a055188-b1e1-4ddc-bd9e-c2c1bcee88f6,beta one off two zero zero,Beta 1 of 2 0 0,beta one of two zero zero,0.7330,16.67%,3.85%,0.2082
+1a81d3f6-3216-4a35-af0b-d0f0fa846b3e,gamma seven clear for takeoff,Karma 7 Clear for take off,karma seven clear for take off,0.7224,60.00%,10.34%,0.3256
+1d7186d6-8a4c-4f61-97e3-7baac1d5e847,mission complete,Mission complete.,mission complete,0.5847,0.00%,0.00%,0.3514
+2da33b93-bac3-4095-8ac4-524fff253a47,gamma seven engaged,Kama 7 in 8,kama seven in eight,0.6509,100.00%,42.11%,0.3021
+32e81d2b-ff33-4b7d-abb1-da468872a16d,bravo nine heading,Bravo Nai Handy,bravo nai handy,0.5865,66.67%,44.44%,0.1589
+33d9721a-9c6b-4a19-ad62-2aff83309b39,delta three off,丟他睡友,丟他睡友,0.6501,100.00%,100.00%,0.2875
+3cf637b5-62c5-4628-8575-ce83cbe8a6b2,holding hands,All the enhance.,all the enhance,0.6205,150.00%,76.92%,0.5102
+512f290c-f06d-487b-bac9-178246cba1d0,gama one holding hands,加碼玩好點行,加碼玩好點行,0.7523,100.00%,100.00%,0.2466
+57dcd0c7-bdc8-4b1a-b339-927d4d28c4fe,mission complete,Mission complete.,mission complete,0.5876,0.00%,0.00%,0.3400
+5ec499a9-4b40-4e88-b383-540fcb4b3905,mission complete,Mission Complete,mission complete,0.5521,0.00%,0.00%,0.1823
+628608c6-4d9e-4779-93bb-7e1f36cdeb4f,beta zero two zero zero,베타지로 출지조리로,베타지로 출지조리로,0.8258,100.00%,95.65%,0.2389
+6423822e-35f3-4bfd-ac94-b84cbde0f67e,delta three off,Delta 3 off.,delta three off,0.6222,0.00%,0.00%,0.2604
+6a6708e4-b8da-4554-98a8-61e342127b7a,alpha one scramble,阿發萬事關播,阿發萬事關播,0.6895,100.00%,100.00%,0.2525
+7bc5a8a0-036c-4def-9de9-0709fff7f795,holding hands,Holding hands.,holding hands,0.5858,0.00%,0.00%,0.3433
+81da6eae-b3e6-4161-9e80-8b1b450ee2c0,holding hands,Holding Hands,holding hands,0.5871,0.00%,0.00%,0.2621
+8202755b-cc89-4801-9cb4-f3b6b2b5f9d3,beta zero two zero zero,Beta zero two zero zero,beta zero two zero zero,0.6624,0.00%,0.00%,0.1965
+85a5da38-79be-4ab7-8391-86a19bce899b,delta five off three thousand,Data file of 3000,data file of three thousand,0.6276,60.00%,13.79%,0.1616
+860a72ca-46df-4fa0-8085-6b0552765cd7,delta five off three thousand,Dilta 5 of 3000,dilta five of three thousand,0.6962,40.00%,6.90%,0.1954
+88d5f6c9-8689-4354-8fd4-d333ab154991,alpha eight cleared to land runway two one,Alpha 8 clear to land runway 21,alpha eight clear to land runway two one,0.7442,12.50%,4.76%,0.1886
+8922cfbe-7f64-4847-9552-a2708c157c9e,delta five off three thousand,Delta 5 of 3000,delta five of three thousand,0.6223,20.00%,3.45%,0.1789
+8cf93a28-3a24-461c-ad11-fba4f07aea0f,alfa four angle one eight zero,Alpha 4 and Go 1 and 0.,alpha four and go one and zero,0.7647,66.67%,36.67%,0.3172
+8f20d6c4-2a50-4232-8201-2ce0a5763cd1,beta two engaged,Beta 2 Engage,beta two engage,0.6591,33.33%,6.25%,0.2395
+934ce005-732c-4e18-b04c-fb34a96688b0,auo property,AUO Property,auo property,0.5896,0.00%,0.00%,0.2559
+977ce7e4-10b6-44d7-b8b5-c5b1c0ed7295,cleared for takeoff,Cleared for takeoff.,cleared for takeoff,0.6938,0.00%,0.00%,0.2126
+9b1b39e9-cd09-4169-9083-30833f5409ac,beta three holding hands,Beta 3 holding hands.,beta three holding hands,0.6647,0.00%,0.00%,0.3581
+9b5c1e31-ebeb-42d2-aa5e-4886ad9a4540,beta two engaged,Beta 2 in the G,beta two in the g,0.6942,100.00%,37.50%,0.3741
+9d0fc2d3-57d8-48ff-9ff8-6059859d2e75,alpha four in two seven zero,Alpha 4 in 270.,alpha four in two seven zero,0.6611,0.00%,0.00%,0.2540
+9e244a94-6b20-43ab-bf46-9c72bd6afc2a,cleared for takeoff,"Kareo 4, take off.",kareo four take off,0.7713,133.33%,31.58%,0.2760
+9efbf031-80e1-4b4c-9818-f087b8e5bb8f,delta three off,Data free of.,data free of,0.6298,100.00%,33.33%,0.2785
+a4561da5-7097-47ec-8500-615ad425478f,beta one in nine thousand,Beta 1 in 9000s,beta one in nine thousand s,0.7009,20.00%,8.00%,0.2832
+a5b8c7d1-8db0-4971-b24b-38102170817b,gamma two go cover three six zero,Gamma 2 Gold Cover 360,gamma two gold cover three six zero,0.6979,14.29%,6.06%,0.1788
+a5c4bf41-bb19-4a99-bb75-c701ef096009,bravo seven mission complete,Bubble 7 Mission Complete,bubble seven mission complete,0.6977,25.00%,17.86%,0.2441
+ad5aaeb4-8e36-4544-90da-0925eccf12a3,mission complete,Mission Complete,mission complete,0.5929,0.00%,0.00%,0.2725
+b5e1fd8a-4b8a-4844-b1e7-a0dee235294a,alfa four angle one eight zero,Alpha 4 angle 180,alpha four angle one eight zero,0.6294,16.67%,6.67%,0.1300
+bdab1b76-81ee-461a-b82a-5af8a6ee520a,delta three off,Delta 3.0,delta three zero,0.6237,33.33%,26.67%,0.2894
+bed24e0b-2b05-4ab6-b741-38398d38f0a4,delta one off,字幕由 Amara.org 社群提供,字幕由 amaraorg 社群提供,0.9756,100.00%,107.69%,0.3518
+c729e3e1-4372-4f25-87e2-a5c82fd2d148,delta one scramble,Delta One 狂播,delta one 狂播,0.7291,33.33%,44.44%,0.4272
+c9a5a879-403c-4a42-ba84-b6367adc88c2,mission complete,Mission complete.,mission complete,0.5961,0.00%,0.00%,0.3326
+cc03b073-87aa-4697-9e42-2a12c6c62c11,alpha two go cover one o one,AFA TO GO COVER 101,afa to go cover one zero one,0.7358,42.86%,25.00%,0.1526
+ce962a89-296a-4ab1-aaba-e66203a886d4,gamma nine engaged,Gamma9 Engage,gamma nine engage,0.7143,33.33%,5.56%,0.2480
+d0458c64-6333-471a-b38c-b6c03d65083f,delta one scramble,Delta One Scramble,delta one scramble,0.6670,0.00%,0.00%,0.1776
+d7850d3c-4cb5-4173-8283-929eabc64577,delta three off,Delta 3 off,delta three off,0.6285,0.00%,0.00%,0.2198
+d7ec8e61-6556-4002-836c-be657dddb214,holding hands,Holding Hands,holding hands,0.5648,0.00%,0.00%,0.2118
+d98c9496-ebd2-4247-8a83-000339736b18,bravo two go cover two zero zero,"Bravo 2, go cover 2-0-0.",bravo two go cover two zero zero,0.8751,0.00%,0.00%,0.2951
+da7720cf-2786-4df8-8229-aec7b704a1a3,gamma five heading eight thousand,Gamma 5 heading 8000,gamma five heading eight thousand,0.7023,0.00%,0.00%,0.2180
+dbb035f2-a6bf-44ff-b80e-52667d9e8a6d,holding hands,Holding hands.,holding hands,0.6036,0.00%,0.00%,0.2721
+ddf50ce3-f340-45f2-8a18-24a992505a52,delta three off,DELTA 3OFF,delta three off,0.6665,0.00%,0.00%,0.2479
+de3a2bd9-ab88-4983-9606-b0f93ef060f3,gamma seven in edge,Gamma 7音樂曲,gamma seven 音樂曲,0.7404,50.00%,36.84%,0.3072
+e18a700f-b5aa-498d-b012-6ab4ac0aea6a,delta five off three thousand,Data file of 3000,data file of three thousand,0.6690,60.00%,13.79%,0.1960
+e1ed0643-ccfb-4803-9fcd-d36f883f426d,beta two engaged,베타 투 잉게이징,베타 투 잉게이징,0.8152,100.00%,87.50%,0.2582
+e5a67927-c1d5-46a0-a99d-b34b0d360163,mission complete,미션 컴플리트,미션 컴플리트,0.7870,100.00%,93.75%,0.3803
+e9ea0ee7-a5b8-48fe-a230-a264e2fefc9c,mission complete,明星堂會議,明星堂會議,0.7108,100.00%,100.00%,0.3143
+ee19baaa-6d2c-4f9b-be4d-390d1b2e22bd,delta three off,델타 3 오픈,델타 three 오픈,0.7390,66.67%,53.33%,0.3149
+f09e0d3f-3de0-4a0d-950c-9a5e0d0c4c78,alpha one scramble,Alpha One Scrambler,alpha one scrambler,0.6684,33.33%,5.56%,0.2429
+f2e5e8a4-54c1-461c-a724-d3636886394f,delta nine heading,DELTA 9 HEADING,delta nine heading,0.7394,0.00%,0.00%,0.3301
+f4ec48e8-5a34-4eef-a5b6-75cab3899277,alpha two go cover zero one zero,Alpha 2 go cover 010.,alpha two go cover zero one zero,0.7532,0.00%,0.00%,0.2402
+f81f5414-b591-455c-bc94-b68450f71acb,beta three off,Data free of.,data free of,0.6313,100.00%,35.71%,0.3609
+f9e94f93-e6d0-4e09-8cf3-79f20219e95d,alpha six angle one two zero,Alpha 6 and Go 120.,alpha six and go one two zero,0.7103,33.33%,14.29%,0.2581
+fc70b395-2fe3-41d7-8dc2-ac3bd7d43716,beta one off two zero zero,Beta 1 of 2 0 0,beta one of two zero zero,0.7079,16.67%,3.85%,0.3191
+Averages,,,0.7158,41.61%,26.80%,0.2805
