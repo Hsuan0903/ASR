@@ -2,7 +2,7 @@ FROM nvcr.io/nvidia/l4t-pytorch:r35.2.1-pth2.0-py3
 
 # Install basic dependencies
 RUN apt-get update && apt-get install -y \
-    ffmpeg
+    ffmpeg \
     python3-pip \
     git \
     && pip3 install --upgrade pip
