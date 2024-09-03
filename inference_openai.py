@@ -11,17 +11,23 @@ import time
 
 # 設定模型權重檔案  
 
-model_name = 'large-v3'  # 可以選擇 'tiny', 'base', 'small', 'medium', 'large'  
+model_name = 'large-v2'  # 可以選擇 'tiny', 'base', 'small', 'medium', 'large'  
 
 start_time = time.time()
 model = whisper.load_model(model_name)  
 load_model_time = time.time() - start_time
 print(load_model_time)
-
+is_prompt = True
 # 設定資料夾路徑  
 audio_folder = 'real_data_V2/wav'  # 替換成你的資料夾路徑  
 json_file_path = 'real_data_V2/annotations.json'
-csv_file_path = 'openai_results.csv'  
+
+
+if is_prompt:
+    csv_file_path = 'openai_results_with_prompt_v2.csv'  
+else:
+    csv_file_path = 'openai_results_v2.csv'  
+
 
 gt_dict = {}
 # Open and read the JSON file line by line  
@@ -67,30 +73,36 @@ with open(csv_file_path, 'w', newline='', encoding='utf-8') as csv_file:
         print(f'Processing file: {audio_file}')  
         
         
-        # 使用 torchaudio 讀取音頻文件  
-        waveform, sample_rate = torchaudio.load(audio_file)  
+        # # 使用 torchaudio 讀取音頻文件  
+        # waveform, sample_rate = torchaudio.load(audio_file)  
         
-        # 如果需要將音頻轉換為模型所需的格式  
-        if sample_rate != 16000:  
-            transform = torchaudio.transforms.Resample(orig_freq=sample_rate, new_freq=16000)  
-            waveform = transform(waveform)  
+        # # 如果需要將音頻轉換為模型所需的格式  
+        # if sample_rate != 16000:  
+        #     transform = torchaudio.transforms.Resample(orig_freq=sample_rate, new_freq=16000)  
+        #     waveform = transform(waveform)  
         
-        # Whisper 模型期望音頻數據為 numpy array 格式  
-        audio = waveform.squeeze().numpy()  
+        # # Whisper 模型期望音頻數據為 numpy array 格式  
+        # audio = waveform.squeeze().numpy()  
         
+
         # 進行推論，限制語言為英文  
         options = {  
             "fp16": torch.cuda.is_available(),  
             "language": "en",  
-            "task": "transcribe"  # 確保進行轉錄而不是翻譯  
-        } 
+            "task": "transcribe",  # 確保進行轉錄而不是翻譯
+            "initial_prompt": """
+                                two ,off, Alpha, Bravo, Beta, Delta, Gamma, Scramble, Holding Hands, Flow Four, Engaged, Mission Complete, Initial Five, Gear Check, Full Stop, Go Cover, IN, OFF, Cleared to Land, Angle and Heading.
+                                """ if is_prompt else None,
+            }
+
         start_time = time.time()
-        result = model.transcribe(audio, **options)  
+        result = model.transcribe(audio_file, **options)  
         infer_time = time.time() - start_time
 
         gt = gt_dict[audio_file.split('/')[-1][:-4]]
         ori_pred  = result['text']
-        hotword, pred = process_transcription(ori_pred )
+        
+        hotword, pred = process_transcription(ori_pred)
 
         # 計算 WER、CER 和 RTF  
         wer_value = compute_wer(gt, pred)  
