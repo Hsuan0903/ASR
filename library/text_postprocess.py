@@ -91,6 +91,7 @@ actions = {
     "Cleared to Land": 10, "Go Around": 11, "Heading": 12, "Angel": 13
 }
 
+
 # 編碼函數
 def encode_command(ai_machine, action, number=None):
     ai_code = ai_machines.get(ai_machine, -1)
@@ -100,6 +101,45 @@ def encode_command(ai_machine, action, number=None):
         number = -1  # 表示無數字部分
     
     return (ai_code, action_code, number)
+
+
+def spoken_to_mixed(input_string):
+    word_to_digit = {
+        'zero': '0', 'one': '1', 'two': '2', 'tree': '3', 'four': '4',
+        'five': '5', 'six': '6', 'seven': '7', 'eight': '8', 'niner': '9'
+    }
+    spoken_patterns = {
+            'thousand': '000',
+        }
+    
+    def spoken_to_number(spoken_string):
+        
+        
+        words = spoken_string.split()
+        result = []
+        
+        for word in words:
+            if word in word_to_digit:
+                result.append(word_to_digit[word])
+            elif word in spoken_patterns:
+                result.append(spoken_patterns[word])
+            else:
+                result.append(word)
+        
+        return ''.join(result)
+
+    def process_segment(segment):
+        if all(word in word_to_digit or word in spoken_patterns for word in segment.split()):
+            return spoken_to_number(segment)
+        else:
+            return segment
+    
+    parts = re.split(r'(\s+)', input_string)
+    mixed_parts = [process_segment(part) for part in parts if part]
+    
+    # 合併結果並去除多餘的空格
+    mixed_form = ''.join(mixed_parts).strip()
+    return re.sub(r'\s+', ' ', mixed_form)
 
 if __name__ == "__main__":
     # 示例使用
@@ -114,3 +154,8 @@ if __name__ == "__main__":
     print(encode_command("Tiger Tree", "Angel", 3000))  # (3, 13, 3000)
     print(encode_command("Tiger Four", "Angel", 20))  # (4, 13, 20)
 
+# 測試範例
+    print(spoken_to_mixed("tree thousand"))
+    print(spoken_to_mixed("tree six zero"))
+    print(spoken_to_mixed("tree zero"))
+    print(spoken_to_mixed("niner zero"))
