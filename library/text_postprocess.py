@@ -1,15 +1,41 @@
 import string
 import re
+import time
+import json
 
 # 示例 ATC 熱詞列表
+# action_hotwords = [
+#     "Scramble", "Holding Hands", "Flow Four", "Engaged",
+#     "Mission Complete", "Initial Five", "Gear Check, Full Stop",
+#     "Go Cover", "IN", "OFF", "Cleared to Land",
+#     "Angle", "Heading",
+# ]
 action_hotwords = [
-    "Scramble", "Holding Hands", "Flow Four", "Engaged", 
-    "Mission Complete", "Initial Five", "Gear Check, Full Stop",
-    "Go Cover", "IN", "OFF", "Cleared to Land",
-    "Angle", "Heading",
+    "Scramble", "Holding Hands", "Engaged", "Mission Complete", "Initial Five",
+    "Go Cover", "Cleared for Takeoff", "Cleared to Land", "Go Around", "IN", "OFF",
+    "Angel", "Heading",
 ]
 
-ai_machine_hotwords = ['Alpha', 'Bravo', 'Delta', 'Gamma']
+# ai_machine_hotwords = ['Alpha', 'Bravo', 'Delta', 'Gamma']
+ai_machine_hotwords = ['Viper', 'Tiger']
+
+ai_machine_number_hotwords = ['one', 'two', 'tree', 'three', 'four']
+
+number_hotwords = ['zero', 'one', 'two', 'tree', 'three', 'four', 'five',
+                   'six', 'seven', 'eight', 'nine', 'niner', 'thousand']
+
+
+# 定義 AI 機器與動作的編碼
+ai_machines = {
+    "tiger one": 1, "tiger two": 2, "tiger tree": 3, "tiger three": 3, "tiger four": 4,
+    "viper one": 5, "viper two": 6, "viper tree": 7, "viper four": 8
+}
+
+actions = {
+    "scramble": 1, "holding hands": 2, "engage": 3, "mission complete": 4,
+    "initial five": 5, "go cover": 6, "in": 7, "off": 8, "cleared for takeoff": 9,
+    "cleared to land": 10, "go around": 11, "heading": 12, "angel": 13
+}
 
 # 去除標點符號並將文本轉換為小寫
 def remove_punctuation_and_lowercase(transcription):
@@ -19,11 +45,19 @@ def remove_punctuation_and_lowercase(transcription):
 
 # 比對熱詞並返回匹配的關鍵詞
 def find_matched_hotwords(text, hotwords):
+    for index, word in enumerate(hotwords):
+        if f"{word.lower()} " in text:
+            matched_words = word.lower()
+            matched_index = text.split().index(matched_words.split()[-1])
+            return matched_index, matched_words
+    return None, -1
+
+def check_numbers_hotwords(text, hotwords):
     matched_words = []
-    for word in hotwords:
-        if word.lower() in text:
+    for word in text:
+        if word in hotwords:
             matched_words.append(word)
-    return matched_words
+    return matched_words if matched_words else -1
 
 # 將數字字符串轉換為口語形式
 def mixed_to_spoken(input_string):
@@ -70,54 +104,50 @@ def separate_alphanumeric(text):
 def process_transcription(transcription):
     cleaned_text = remove_punctuation_and_lowercase(transcription)
     separated_text = separate_alphanumeric(cleaned_text)
-    
-    matched_machine_hotwords = find_matched_hotwords(separated_text, ai_machine_hotwords)
-    matched_action_hotwords = find_matched_hotwords(separated_text, action_hotwords)
-    
     spoken_text = mixed_to_spoken(separated_text)
-    
-    return (matched_machine_hotwords, matched_action_hotwords), spoken_text
 
+    # find AI machine type
+    matched_machine_index, matched_machine_hotwords = find_matched_hotwords(spoken_text, ai_machine_hotwords)
 
-# 定義 AI 機器與動作的編碼
-ai_machines = {
-    "Tiger One": 1, "Tiger Two": 2, "Tiger Tree": 3, "Tiger Four": 4,
-    "Viper One": 5, "Viper Two": 6, "Viper Tree": 7, "Viper Four": 8
-}
+    # find AI machine number
+    if matched_machine_index is not None and spoken_text:
+        ai_machine_number = check_numbers_hotwords([spoken_text.split()[matched_machine_index+1]], ai_machine_number_hotwords)
+        matched_machine_hotwords=f"{matched_machine_hotwords} {' '.join(ai_machine_number)}" if ai_machine_number != -1 else -1
 
-actions = {
-    "Scramble": 1, "Holding Hands": 2, "Engage": 3, "Mission Complete": 4,
-    "Initial Five": 5, "Go Cover": 6, "In": 7, "Off": 8, "Cleared for Takeoff": 9,
-    "Cleared to Land": 10, "Go Around": 11, "Heading": 12, "Angel": 13
-}
+    # find action type
+    matched_action_index, matched_action_hotwords = find_matched_hotwords(spoken_text, action_hotwords)
 
+    # number to word
 
-# 編碼函數
-def encode_command(ai_machine, action, number=None):
-    ai_code = ai_machines.get(ai_machine, -1)
-    action_code = actions.get(action, -1)
-    
-    if number is None:
-        number = -1  # 表示無數字部分
-    
-    return (ai_code, action_code, number)
+    # checking the last number
+    if matched_action_hotwords in ["angel", "heading"] and spoken_text:
+        last_data = spoken_text.split()[spoken_text.split().index(matched_action_hotwords)+1:]
+        numbers = ' '.join(check_numbers_hotwords(last_data, number_hotwords))
+    else:
+        numbers = -1
 
+    hotwords = {
+        "ai_code": matched_machine_hotwords,
+        "action_code": matched_action_hotwords,
+        "numbers": numbers
+    }
+
+    return hotwords, spoken_text
 
 def spoken_to_mixed(input_string):
     word_to_digit = {
-        'zero': '0', 'one': '1', 'two': '2', 'tree': '3', 'four': '4',
-        'five': '5', 'six': '6', 'seven': '7', 'eight': '8', 'niner': '9'
+        'zero': '0', 'one': '1', 'two': '2', 'three': '3', 'tree': '3', 'four': '4',
+        'five': '5', 'six': '6', 'seven': '7', 'eight': '8', 'nine': '9', 'niner': '9'
     }
     spoken_patterns = {
-            'thousand': '000',
-        }
-    
+        'thousand': '000',
+    }
+
     def spoken_to_number(spoken_string):
-        
-        
+
         words = spoken_string.split()
         result = []
-        
+
         for word in words:
             if word in word_to_digit:
                 result.append(word_to_digit[word])
@@ -125,7 +155,7 @@ def spoken_to_mixed(input_string):
                 result.append(spoken_patterns[word])
             else:
                 result.append(word)
-        
+
         return ''.join(result)
 
     def process_segment(segment):
@@ -133,29 +163,49 @@ def spoken_to_mixed(input_string):
             return spoken_to_number(segment)
         else:
             return segment
-    
+
     parts = re.split(r'(\s+)', input_string)
     mixed_parts = [process_segment(part) for part in parts if part]
-    
+
     # 合併結果並去除多餘的空格
     mixed_form = ''.join(mixed_parts).strip()
     return re.sub(r'\s+', ' ', mixed_form)
 
+# 編碼函數
+def encode_command(hotwords):
+    ai_code = ai_machines.get(hotwords['ai_code'], -1)
+    action_code = actions.get(hotwords['action_code'], -1)
+
+    if hotwords['numbers'] == -1:
+        return (ai_code, action_code, -1)
+    number = int(spoken_to_mixed(hotwords['numbers']))
+
+    return (ai_code, action_code, number)
+
 if __name__ == "__main__":
     # 示例使用
-    transcription = "Data file of 3000"
+
+    transcription = "tiger 2 angel 022"
+    start = time.time()
     matched_hotwords, spoken_text = process_transcription(transcription)
+    command_number = encode_command(matched_hotwords)
+    end = time.time()
     print("Matched hotwords:", matched_hotwords)
+    print("command number:", command_number)
     print("Spoken form:", spoken_text)
+    print("spent time:", end - start)
 
-# 測試範例
-    print(encode_command("Tiger One", "Holding Hands"))  # (1, 2, -1)
-    print(encode_command("Viper One", "Go Around"))  # (5, 11, -1)
-    print(encode_command("Tiger Tree", "Angel", 3000))  # (3, 13, 3000)
-    print(encode_command("Tiger Four", "Angel", 20))  # (4, 13, 20)
 
-# 測試範例
-    print(spoken_to_mixed("tree thousand"))
-    print(spoken_to_mixed("tree six zero"))
-    print(spoken_to_mixed("tree zero"))
-    print(spoken_to_mixed("niner zero"))
+    # with open('parler-tts-main/generate_config_new.json', newline='') as csvfile:
+    #     data = json.load(csvfile)
+    #     prompts = data['prompt']
+    #     for transcription in prompts:
+    #         start = time.time()
+    #         print(transcription)
+    #         matched_hotwords, spoken_text = process_transcription(transcription)
+    #         command_number = encode_command(matched_hotwords)
+    #         end = time.time()
+    #         print("Matched hotwords:", matched_hotwords)
+    #         print("command number:", command_number)
+    #         print("Spoken form:", spoken_text)
+    #         print("spent time:", end - start)
