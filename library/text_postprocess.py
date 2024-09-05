@@ -107,3 +107,10 @@ if __name__ == "__main__":
     matched_hotwords, spoken_text = process_transcription(transcription)
     print("Matched hotwords:", matched_hotwords)
     print("Spoken form:", spoken_text)
+
+# 測試範例
+    print(encode_command("Tiger One", "Holding Hands"))  # (1, 2, -1)
+    print(encode_command("Viper One", "Go Around"))  # (5, 11, -1)
+    print(encode_command("Tiger Tree", "Angel", 3000))  # (3, 13, 3000)
+    print(encode_command("Tiger Four", "Angel", 20))  # (4, 13, 20)
+
