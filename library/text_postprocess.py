@@ -78,6 +78,29 @@ def process_transcription(transcription):
     
     return (matched_machine_hotwords, matched_action_hotwords), spoken_text
 
+
+# 定義 AI 機器與動作的編碼
+ai_machines = {
+    "Tiger One": 1, "Tiger Two": 2, "Tiger Tree": 3, "Tiger Four": 4,
+    "Viper One": 5, "Viper Two": 6, "Viper Tree": 7, "Viper Four": 8
+}
+
+actions = {
+    "Scramble": 1, "Holding Hands": 2, "Engage": 3, "Mission Complete": 4,
+    "Initial Five": 5, "Go Cover": 6, "In": 7, "Off": 8, "Cleared for Takeoff": 9,
+    "Cleared to Land": 10, "Go Around": 11, "Heading": 12, "Angel": 13
+}
+
+# 編碼函數
+def encode_command(ai_machine, action, number=None):
+    ai_code = ai_machines.get(ai_machine, -1)
+    action_code = actions.get(action, -1)
+    
+    if number is None:
+        number = -1  # 表示無數字部分
+    
+    return (ai_code, action_code, number)
+
 if __name__ == "__main__":
     # 示例使用
     transcription = "Data file of 3000"
