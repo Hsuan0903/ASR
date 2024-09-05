@@ -20,8 +20,8 @@ load_model_time = time.time() - start_time
 print(load_model_time)
 is_prompt = True
 # 設定資料夾路徑
-audio_folder = 'finetune_code/wav/Li/'  # 替換成你的資料夾路徑
-json_file_path = 'finetune_code/wav/Li.json'
+audio_folder = 'real_data_v2/wav/Li/'  # 替換成你的資料夾路徑
+json_file_path = 'real_data_v2/Li.json'
 
 if is_prompt:
     csv_file_path = 'openai_results_with_prompt_Li_v2.csv'
@@ -52,7 +52,7 @@ audio_files = glob(os.path.join(audio_folder, '*.wav'))
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
 
-wer_metric = evaluate.load(f'finetune_code/metrics/wer.py')
+wer_metric = evaluate.load(f'lib/wer.py')
 
 
 # 打開 CSV 文件進行寫入
