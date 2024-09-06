@@ -47,11 +47,9 @@ def remove_punctuation_and_lowercase(transcription):
 # 比對熱詞並返回匹配的關鍵詞
 def find_matched_hotwords(text, hotwords):
     text = f" {text} "
-    print(text)
     for index, word in enumerate(hotwords):
         if f" {word.lower()} " in text:
             matched_words = word.lower()
-            print(matched_words)
             matched_index = text.split().index(matched_words.split()[-1])
             return matched_index, matched_words
     return None, -1
