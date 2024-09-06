@@ -11,13 +11,13 @@ import json
 #     "Angle", "Heading",
 # ]
 action_hotwords = [
-    "Scramble", "Holding Hands", "Engaged", "Mission Complete", "Initial Five",
-    "Go Cover", "Cleared for Takeoff", "Cleared to Land", "Go Around", "IN", "OFF",
+    "Scramble", "Holding Hands", "Engage", "Engaged", "Mission Complete", "Initial Five",
+    "Go Cover", "Cleared for Takeoff", "Cleared for Take off", "Cleared to Land", "Go Around", "IN", "OFF",
     "Angel", "Heading",
 ]
 
 # ai_machine_hotwords = ['Alpha', 'Bravo', 'Delta', 'Gamma']
-ai_machine_hotwords = ['Viper', 'Tiger']
+ai_machine_hotwords = ['Viber', 'Viper', 'Tiger']
 
 ai_machine_number_hotwords = ['one', 'two', 'tree', 'three', 'four']
 
@@ -28,13 +28,14 @@ number_hotwords = ['zero', 'one', 'two', 'tree', 'three', 'four', 'five',
 # 定義 AI 機器與動作的編碼
 ai_machines = {
     "tiger one": 1, "tiger two": 2, "tiger tree": 3, "tiger three": 3, "tiger four": 4,
-    "viper one": 5, "viper two": 6, "viper tree": 7, "viper four": 8
+    "viper one": 5, "viper two": 6, "viper tree": 7, "viper four": 8,
+    "viber one": 5, "viber two": 6, "viber tree": 7, "viber four": 8
 }
 
 actions = {
     "scramble": 1, "holding hands": 2, "engage": 3, "mission complete": 4,
-    "initial five": 5, "go cover": 6, "in": 7, "off": 8, "cleared for takeoff": 9,
-    "cleared to land": 10, "go around": 11, "heading": 12, "angel": 13
+    "initial five": 5, "go cover": 6, "in": 7, "off": 8, "cleared for takeoff": 9, "cleared for take off": 9,
+    "cleared to land": 10, "go around": 11, "heading": 12, "angel": 13, "angle": 13
 }
 
 # 去除標點符號並將文本轉換為小寫
@@ -45,6 +46,7 @@ def remove_punctuation_and_lowercase(transcription):
 
 # 比對熱詞並返回匹配的關鍵詞
 def find_matched_hotwords(text, hotwords):
+    text = f" {text} "
     for index, word in enumerate(hotwords):
         if f"{word.lower()} " in text:
             matched_words = word.lower()
@@ -122,7 +124,8 @@ def process_transcription(transcription):
     # checking the last number
     if matched_action_hotwords in ["angel", "heading"] and spoken_text:
         last_data = spoken_text.split()[spoken_text.split().index(matched_action_hotwords)+1:]
-        numbers = ' '.join(check_numbers_hotwords(last_data, number_hotwords))
+        numbers = check_numbers_hotwords(last_data, number_hotwords)
+        numbers = ' '.join(numbers) if numbers != -1 else -1
     else:
         numbers = -1
 
@@ -185,7 +188,7 @@ def encode_command(hotwords):
 if __name__ == "__main__":
     # 示例使用
 
-    transcription = "tiger 2 angel 022"
+    transcription = "viper four cleared for takeoff"
     start = time.time()
     matched_hotwords, spoken_text = process_transcription(transcription)
     command_number = encode_command(matched_hotwords)
@@ -201,7 +204,6 @@ if __name__ == "__main__":
     #     prompts = data['prompt']
     #     for transcription in prompts:
     #         start = time.time()
-    #         print(transcription)
     #         matched_hotwords, spoken_text = process_transcription(transcription)
     #         command_number = encode_command(matched_hotwords)
     #         end = time.time()
