@@ -89,9 +89,6 @@ with open(csv_file_path, 'w', newline='', encoding='utf-8') as csv_file:
             "fp16": torch.cuda.is_available(),
             "language": "en",
             "task": "transcribe",  # 確保進行轉錄而不是翻譯
-            # "initial_prompt": """
-            #                   two ,off, Alpha, Bravo, Beta, Delta, Gamma, Scramble, Holding Hands, Flow Four, Engaged, Mission Complete, Initial Five, Gear Check, Full Stop, Go Cover, IN, OFF, Cleared to Land, Angle and Heading.
-            #                   """ if is_prompt else None,
             "initial_prompt": """
                               two , off, tiger, viper, Scramble, Holding Hands, fluid four, Engaged, Mission Complete, Initial Five, wedge, Go Cover, IN, OFF, Cleared to Land, Angle and Heading, Cleared for Takeoff, Go Around.
                               """ if is_prompt else None, # 李博新版 240905
